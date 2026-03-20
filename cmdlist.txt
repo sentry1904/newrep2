@@ -1,0 +1,38 @@
+git cmnds
+
+
+create a key , deploy pub to git repo and add pvt to gitconfig
+
+change/set username git config --global user.name "Your username"
+chnage/set gmail git config --global user.email "abc@gmail.com"
+
+git clone
+git add filename.txt or git add .
+git commit -m "title of yo commit"
+git push origin main
+
+
+for new branch, git branch branchname
+to see all branches, git branch -a
+for branch switch , git checkout <branch name>
+git rm filename.txt for removal of file
+git mv <old name> <new name> to rename a file
+
+
+git status to check change/repo status
+
+to merge 
+git branchname merge
+git remote -v to list remote repos
+
+git pull origin main(or branch name) to pull from that and merge from remote
+git fetch origin , same as pull but without merging
+
+
+
+git tag <tagname> first 5 chars of commit id
+
+git tag , list all tags
+
+git rebase <branch name> reapply commits on top of another branch
+
