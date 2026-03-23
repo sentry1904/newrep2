@@ -2,22 +2,38 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Create Directory') {
             steps {
-                echo 'Building...'
+                sh '''
+                    mkdir -p /home/administrator/jenkins/mydir
+                '''
             }
         }
 
-        stage('Test') {
+        stage('Create File') {
             steps {
-                echo 'Testing...'
+                sh '''
+                    echo "This is a test file created by Jenkins" > /home/jenkins/mydir/myfile.txt
+                '''
             }
         }
 
-        stage('Deploy') {
+        stage('Change Permissions') {
             steps {
-                echo 'Deploying...'
+                sh '''
+                    chmod 755 /home/administrator/jenkins/mydir
+                    chmod 644 /home/administrator/jenkins/mydir/myfile.txt
+                '''
             }
+        }
+    }
+
+    post {
+        success {
+            echo ' Directory and file created successfully with proper permissions.'
+        }
+        failure {
+            echo 'Something went wrong while creating directory or file.'
         }
     }
 }
