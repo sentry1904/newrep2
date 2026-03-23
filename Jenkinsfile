@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'echo "This file was created by Jenkins" > /home/testuser/mydirpipe/myfile.txt'
+                        sh 'echo "This file was created by Jenkins" > /home/administrator/myfile.txt'
                         echo " File created successfully"
                     } catch (Exception e) {
                         error(" Failed to create file")
