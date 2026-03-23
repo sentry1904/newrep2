@@ -5,7 +5,7 @@ pipeline {
         stage('Create Directory') {
             steps {
                 sh '''
-                    mkdir -p /home/administrator/jenkins/mydir
+                   sudo mkdir -p /home/administrator/newrep2/mkdir
                 '''
             }
         }
@@ -21,8 +21,8 @@ pipeline {
         stage('Change Permissions') {
             steps {
                 sh '''
-                    chmod 755 /home/administrator/jenkins/mydir
-                    chmod 644 /home/administrator/jenkins/mydir/myfile.txt
+                    chmod 755 /home/administrator/newrep2/mydir
+                    chmod 644 /home/administrator/newrep2/mydir/myfile.txt
                 '''
             }
         }
